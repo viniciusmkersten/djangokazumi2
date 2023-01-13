@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Vagas para PCD encontradas</h1>
+	<section>
+		{% for cad in lista %}
+            <div class="navegacao">
+              <a href="{% url 'pagina1' %}"></a>
+              <div class="container_pesquisa">
+                <form method="GET" action="{% url 'busca' %}">
+                  <input type="text" placeholder="pesquisar..." name="pesquisa" id="pesquisa" title="Campo de Pesquisa">
+                  <a href="{% url 'cadastrar' %}"><button type="button" title="cadastrar"> Cadastrar </button></a>
+					<a href="{% url 'entrar' %}"><button type="button" title="entrar"> Entrar </button></a>
+					<a href="{% url 'busca' %}"><button type="submit" title="cadastrar"><i class="fa fa-search" title="pesquisar"></i></button></a>
+                </form>
+              </div>
+            </div>
+
+			<div class="container">
+
+					<div class="imagens"></div>
+					<h2>{{ cad.empresa }}</h2>
+					<h3>{{ cad.titulo }}</h3>
+					<p>{{ cad.descricao }}</p>
+
+					<p class="info"></p>
+				<button type="button" class="btn btn-success" style="float: right; margin-top: 20px;">
+					<a href="{% url 'pagina2 cad.id' %}">Visualizar vagas</a>
+				</button>
+
+			</div><!-- -->
+
+
+
+		{% endfor %}
+	</section>
+
+
+</body>
+</html>

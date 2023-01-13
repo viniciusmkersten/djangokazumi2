@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        background-color:#f2f2f2;
+    }
+
+    .itemA{
+        width:100%;
+        height:200px;
+        background-color: #ec6b5c;
+        display:flex;
+        justify-content: center;
+    }
+
+    .itemB{
+        width:600px;
+        height:400px;
+        background-color: white;
+        color:black;
+        margin-top:50px;
+        box-shadow: 1px 1px 1px 1px #e8eeef;
+    }
+
+</style>
+<body>
+
+    <div id="conteudo">
+        <div class="itemA">
+            <div class="itemB">
+                <ol>
+                    <h1 style="text-align:center;">Descrição da vaga</h1>
+                    <p>NOME DA EMPRESA: {{ ver_descricao.empresa }}</p>
+                    <p>TITULO: {{ ver_descricao.titulo }}</p>
+                    <p>CIDADE: {{ ver_descricao.cidade }}</p>
+                    <p>SALÁRIO: {{ ver_descricao.salario }}</p>
+                    <p>TIPO DE TRABALHO: {{ ver_descricao.localidade }}</p>
+
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

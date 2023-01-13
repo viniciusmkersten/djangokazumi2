@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Vagas para PCD encontradas</h1>
+	<section>
+		{% for cad in cadastros %}
+			<div class="container">
+
+					<div class="imagens"></div>
+					<h2>{{ cad.empresa }}</h2>
+					<h3>{{ cad.titulo }}</h3>
+					<p>{{ cad.descricao }}</p>
+
+					<p class="info"></p>
+				<button type="button" class="btn btn-success" style="float: right; margin-top: 20px;">
+					<a href="{% url 'pagina2' cad.id %}">Visualizar vaga</a>
+				</button>
+
+
+
+
+			</div><!-- -->
+
+
+
+		{% endfor %}
+
+	</section>
+<button type="button" title="entrar"><a href="{% url 'entrar' %}">Entrar</a></button>
+
+</body>
+</html>
